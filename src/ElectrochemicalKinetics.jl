@@ -24,4 +24,7 @@ export fitting_params, fit_model, fit_overpotential, is_dosmodel
 include("plot_fcns.jl")
 export plot_models, plot_exp_and_models
 
+include("symbolic_kinetic_models.jl")
+export SymbolicButlerVolmer,@named
+
 end
