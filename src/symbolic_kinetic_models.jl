@@ -14,7 +14,9 @@ end
     model::NonlinearSystem
  end
 
+"""
 
+"""
  get_model(m::SymbolicKineticModel) = m.model
 
 
@@ -49,7 +51,7 @@ function (model::SymbolicButlerVolmer)(;V_app,kT_app)
         try
             defaults[param]
         catch
-            throw(MethodError,"you need params to solve the system")
+            throw(ErrorException("Parameters need to be set"))
         end
     end
     eq = [
