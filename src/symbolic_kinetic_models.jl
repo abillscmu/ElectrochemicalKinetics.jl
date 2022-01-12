@@ -69,3 +69,5 @@ function (model::SymbolicButlerVolmer)(;V_app,kT_app)
     sol = solve(prob,NewtonRaphson())
 end
 
+compute_k(V_app, model::SymbolicKineticModel; kT = 0.026) = model(V_app=V_app; kT_app = kT)
+
